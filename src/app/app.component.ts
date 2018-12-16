@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NumberSymbol } from '@angular/common';
+import { moveItemInArray, CdkDragDrop, transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +9,19 @@ import { NumberSymbol } from '@angular/common';
 export class AppComponent {
   title = 'angular-dragdrop-module';
   numbers: number[] = [];
+  otherNumbers: number[] = [];
 
   constructor() {
-    for(let i=0; i<10000; i++) {
+    for (let i=0; i<10; i++) {
       this.numbers.push(i);
-
     }
+  }
+  drop(event: CdkDragDrop<number[]>) {
+    if (event.previousContainer !== event.container) {
+      transferArrayItem(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex)
+    } else {
+      moveItemInArray(this.numbers, event.previousIndex, event.currentIndex)
+    }
+    
   }
 }

@@ -1,1 +1,28 @@
-<div *ngFor="let number of numbers">{{ number }}</div>
+<style>
+  .item {
+    height: 150px;
+    width: 100%;
+    border: 1px solid green;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+<div style="display: flex;">
+  <div cdkDropList 
+    [cdkDropListData]="numbers"
+    (cdkDropListDropped)="drop($event)"
+    [cdkDropListConnectedTo]="otherList"
+    #firstList="cdkDropList"
+    style="width: 25%; border: solid red 1px;"> 
+    <div cdkDrag *ngFor="let number of numbers" class = "item">{{ number }}</div>
+  </div>
+  <div cdkDropList 
+    [cdkDropListData]="otherNumbers"
+    (cdkDropListDropped)="drop($event)"
+    [cdkDropListConnectedTo]="firstList"
+    #otherList="cdkDropList" 
+    style="width: 25%; border: solid blue 1px;"> 
+    <div cdkDrag *ngFor="let number of otherNumbers" class = "item">{{ number }}</div>
+  </div>
+</div>
