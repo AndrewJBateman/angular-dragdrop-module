@@ -14,15 +14,17 @@
     (cdkDropListDropped)="drop($event)"
     [cdkDropListConnectedTo]="otherList"
     #firstList="cdkDropList"
-    style="width: 25%; border: solid red 1px;"> 
-    <div cdkDrag *ngFor="let number of numbers" class = "item">{{ number }}</div>
+    style="width: 25%; border: solid red 1px;">
+    <!--list numbered boxed on the left-->
+    <div cdkDrag *ngFor="let number of numbers" class = "item">{{ number }}</div> 
   </div>
   <div cdkDropList 
     [cdkDropListData]="otherNumbers"
     (cdkDropListDropped)="drop($event)"
     [cdkDropListConnectedTo]="firstList"
     #otherList="cdkDropList" 
-    style="width: 25%; border: solid blue 1px;"> 
+    style="width: 25%; border: solid blue 1px;">
+    <!--list numbered boxed on the right to drag to-->
     <div cdkDrag *ngFor="let number of otherNumbers" class = "item">{{ number }}</div>
   </div>
 </div>
