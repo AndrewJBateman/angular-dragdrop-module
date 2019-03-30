@@ -1,29 +1,29 @@
 <style>
   .item {
-    height: 150px;
+    height: 100px;
     width: 100%;
-    border: 1px solid green;
+    border: 2px solid blue;
     display: inline-flex;
     justify-content: center;
     align-items: center;
   }
 </style>
 <div style="display: flex;">
-  <div cdkDropList 
+  <div cdkDropList
     [cdkDropListData]="numbers"
     (cdkDropListDropped)="drop($event)"
     [cdkDropListConnectedTo]="otherList"
     #firstList="cdkDropList"
-    style="width: 25%; border: solid red 1px;">
+    style="width: 25%; border: solid red 2px;">
     <!--list numbered boxed on the left-->
-    <div cdkDrag *ngFor="let number of numbers" class = "item">{{ number }}</div> 
+    <div cdkDrag *ngFor="let number of numbers" class = "item">{{ number }}</div>
   </div>
-  <div cdkDropList 
+  <div cdkDropList
     [cdkDropListData]="otherNumbers"
     (cdkDropListDropped)="drop($event)"
     [cdkDropListConnectedTo]="firstList"
-    #otherList="cdkDropList" 
-    style="width: 25%; border: solid blue 1px;">
+    #otherList="cdkDropList"
+    style="width: 25%; border: solid blue 2px;">
     <!--list numbered boxed on the right to drag to-->
     <div cdkDrag *ngFor="let number of otherNumbers" class = "item">{{ number }}</div>
   </div>

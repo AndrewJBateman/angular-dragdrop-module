@@ -11,17 +11,18 @@ export class AppComponent {
   numbers: number[] = [];
   otherNumbers: number[] = [];
 
+  // create list of numbers
   constructor() {
-    for (let i=0; i<10; i++) {
+    for (let i = 0; i < 10; i++) {
       this.numbers.push(i);
     }
   }
   drop(event: CdkDragDrop<number[]>) {
     if (event.previousContainer !== event.container) {
-      transferArrayItem(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex)
+      transferArrayItem(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex);
     } else {
-      moveItemInArray(this.numbers, event.previousIndex, event.currentIndex)
+      moveItemInArray(this.numbers, event.previousIndex, event.currentIndex);
     }
-    
+
   }
 }
