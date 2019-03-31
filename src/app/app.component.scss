@@ -1,0 +1,43 @@
+.draw-area {
+  height: 100px;
+  width: 50%;
+  display: inline-flex;
+  border: 2px solid black;
+}
+  
+.item {
+  height: 50px;
+  width: 100%;
+  border: 2px solid blue;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board {
+  min-height: 100vh;
+  display: flex;
+}
+
+.column {
+  flex: 1;
+}
+
+cdk-drop {
+  display: block;
+  min-height: 100vh;
+}
+
+
+.cdk-drop-dragging .cdk-drag {
+  transition: transform 500ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.cdk-drag-animating {
+  transition: transform 550ms cubic-bezier(0, 0, 0.2, 1);
+
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}

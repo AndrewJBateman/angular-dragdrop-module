@@ -1,13 +1,34 @@
-<style>
-  .item {
-    height: 100px;
-    width: 100%;
-    border: 2px solid blue;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-  }
-</style>
+<div cdkDrop> 
+  <div class="box" cdkDrag>Drag me around!</div>
+  <br>
+</div>
+
+<div class="board">
+	<div class="column">
+		<h3>New</h3>
+		<div cdkDrop #new="cdkDrop" [cdkDropData]="newItems" [cdkDropConnectedTo]="[active]" (cdkDropDropped)="dropped($event)" (cdkDropEntered)="entered($event)" (cdkDropExited)="exited($event)">
+			<div *ngFor="let item of newItems" [cdkDragData]="item" cdkDrag>
+				New item: {{ item }}
+				<div *cdkDragPreview>{{ item }}</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="column">
+		 <h3>Active</h3>
+		<div cdkDrop #active="cdkDrop" [cdkDropData]="activeItems" [cdkDropConnectedTo]="[new, done]" (cdkDropDropped)="dropped($event)">
+			<div *ngFor="let item of activeItems" cdkDrag [cdkDragData]="item"> {{ item }} </div>
+		</div>
+	</div>
+
+	<div class="column">
+		<h3>Done</h3>
+		<div cdkDrop #done="cdkDrop" [cdkDropData]="doneItems" [cdkDropConnectedTo]="[active]" (cdkDropDropped)="dropped($event)" [cdkDropEnterPredication]="specialUseCase">
+			<div *ngFor="let item of doneItems" cdkDrag [cdkDragData]="item"> {{ item }} </div>
+		</div> 
+	</div>
+</div>
+
 <div style="display: flex;">
   <div cdkDropList
     [cdkDropListData]="numbers"
