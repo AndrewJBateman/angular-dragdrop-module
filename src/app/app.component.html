@@ -1,40 +1,14 @@
-<div cdkDrop> 
+<div class="draw-area" cdkDrop> 
   <div class="box" cdkDrag>Drag me around!</div>
   <br>
 </div>
 
-<div class="board">
-	<div class="column">
-		<h3>New</h3>
-		<div cdkDrop #new="cdkDrop" [cdkDropData]="newItems" [cdkDropConnectedTo]="[active]" (cdkDropDropped)="dropped($event)" (cdkDropEntered)="entered($event)" (cdkDropExited)="exited($event)">
-			<div *ngFor="let item of newItems" [cdkDragData]="item" cdkDrag>
-				New item: {{ item }}
-				<div *cdkDragPreview>{{ item }}</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="column">
-		 <h3>Active</h3>
-		<div cdkDrop #active="cdkDrop" [cdkDropData]="activeItems" [cdkDropConnectedTo]="[new, done]" (cdkDropDropped)="dropped($event)">
-			<div *ngFor="let item of activeItems" cdkDrag [cdkDragData]="item"> {{ item }} </div>
-		</div>
-	</div>
-
-	<div class="column">
-		<h3>Done</h3>
-		<div cdkDrop #done="cdkDrop" [cdkDropData]="doneItems" [cdkDropConnectedTo]="[active]" (cdkDropDropped)="dropped($event)" [cdkDropEnterPredication]="specialUseCase">
-			<div *ngFor="let item of doneItems" cdkDrag [cdkDragData]="item"> {{ item }} </div>
-		</div> 
-	</div>
-</div>
-
 <div style="display: flex;">
   <div cdkDropList
+    #firstList="cdkDropList"
     [cdkDropListData]="numbers"
     (cdkDropListDropped)="drop($event)"
     [cdkDropListConnectedTo]="otherList"
-    #firstList="cdkDropList"
     style="width: 25%; border: solid red 2px;">
     <!--list numbered boxed on the left-->
     <div cdkDrag *ngFor="let number of numbers" class = "item">{{ number }}</div>
@@ -48,4 +22,52 @@
     <!--list numbered boxed on the right to drag to-->
     <div cdkDrag *ngFor="let number of otherNumbers" class = "item">{{ number }}</div>
   </div>
+</div>
+
+<div class="board">
+	<div class="column">
+		<h3>New</h3>
+		<div 
+      cdkDropList
+      #new="cdkDropList" 
+      [cdkDropListData]="newItems" 
+      [cdkDropListConnectedTo]="[active]" 
+      (cdkDropListDropped)="dropped($event)" 
+      (cdkDropListEntered)="entered($event)" 
+      (cdkDropListExited)="exited($event)">
+		  <div *ngFor="let item of newItems" 
+        [cdkDragData]="item" 
+        cdkDrag>
+			  New item: {{ item }}
+			  <div *cdkDragPreview>{{ item }}</div>
+		  </div>
+	  </div>
+	</div>
+
+  <!-- items can be moved either way, to the New or Done columns -->
+	<div class="column">
+		<h3>Active</h3>
+		<div 
+      cdkDropList
+      #active="cdkDropList" 
+      [cdkDropListData]="activeItems" 
+      [cdkDropListConnectedTo]="[new, done]" 
+      (cdkDropListDropped)="dropped($event)">
+			<div *ngFor="let item of activeItems" cdkDrag [cdkDragData]="item"> {{ item }} </div>
+		</div>
+	</div>
+
+  <!-- only allows items 2,5,6,7 to be placed in the Done column -->
+	<div class="column">
+		<h3>Done</h3>
+		<div 
+      cdkDropList
+      #done="cdkDropList"
+      [cdkDropListData]="doneItems"
+      [cdkDropListConnectedTo]="[active]"
+      (cdkDropListDropped)="dropped($event)"
+      [cdkDropListEnterPredicate]="specialUseCase">
+			<div *ngFor="let item of doneItems" cdkDrag [cdkDragData]="item"> {{ item }} </div>
+		</div> 
+	</div>
 </div>

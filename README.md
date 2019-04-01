@@ -19,6 +19,8 @@ This project uses the [@angular/cdk/drag-drop module](https://material.angular.i
 
 "The [@angular/cdk/drag-drop module](https://material.angular.io/cdk/drag-drop/overview) provides you with a way to easily and declaratively create drag-and-drop interfaces, with support for free dragging, sorting within a list, transferring items between lists, animations, touch devices, custom drag handles, previews, and placeholders, in addition to horizontal lists and locking along an axis."
 
+Important note: the version of Angular Material is important. Version 7.1.1 is used here which means cdkDrop**List** elements are used (i.e. 'cdkDrop' elements will not work).
+
 ## Screenshots
 
 ![Example screenshot](./img/dragAndDrop.png)
@@ -31,33 +33,64 @@ This project uses the [@angular/cdk/drag-drop module](https://material.angular.i
 
 ## Setup
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+* Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+* Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## Code Examples
 
+* Function to move numbered blocks from 1 list to another.
+
+```typescript
+  drop(event: CdkDragDrop<number[]>) {
+    console.log(event.previousContainer.data); // initially returns array (10) [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    console.log(event.container.data); // initially returns []
+
+      if (event.previousContainer !== event.container) { // check to see if moved across lists
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+    } else { // move within the same array and change index
+      moveItemInArray(
+        this.numbers,
+        event.previousIndex,
+        event.currentIndex
+      );
+    }
+  }
+
+```
+
 ## Features
 
-* Drag and drop functionality.
+* Drag and drop functionality - from one list to the other (with certain restrictions - e.g. you cannot move an active item back to the new items list).
+
+* Items can be rearranged in their lists.
+
+* Transitions used between lists
 
 ## Status & To-Do List
 
-* Status: Project is not working - dependencies need to be re-done.
+* Status: Working app that shows off the [@angular/cdk/drag-drop](https://material.angular.io/cdk/drag-drop/overview) module.
 
-* To-Do:
+* To-Do: add functionality.
 
 ## Inspiration
 
-* Project inspired by Youtube tutorial: [Drag and Drop with the Angular CDK - What's New in v7](https://www.youtube.com/watch?v=t1CrWLGxQPk).
+* [Youtube tutorial: Drag and Drop with the Angular CDK - What's New in v7](https://www.youtube.com/watch?v=t1CrWLGxQPk).
 
-*[Tim Deschryver's Exploring Drag and Drop with the new Angular Material CDK](https://blog.angularindepth.com/exploring-drag-and-drop-with-the-angular-material-cdk-2e0237857290)
+* [Tim Deschryver's Exploring Drag and Drop with the new Angular Material CDK](https://blog.angularindepth.com/exploring-drag-and-drop-with-the-angular-material-cdk-2e0237857290)
 
 * [Nwose Lotann´s Building Interactive Lists with the new Angular 7 Drag and Drop tool](https://blog.angularindepth.com/building-interactive-lists-with-the-new-angular-7-drag-and-drop-tool-5f2402f8cb27).
+
+* [Sumit Vekariya's An Intro to Drag & Drop in Angular Using the CDK](https://alligator.io/angular/drag-drop/).
 
 ## Contact
 

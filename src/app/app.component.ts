@@ -1,11 +1,12 @@
-import { Component, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   CdkDragDrop,
   moveItemInArray,
   transferArrayItem,
   CdkDragEnter,
   CdkDragExit,
-  CdkDrag
+  CdkDrag,
+  CdkDropList
 } from '@angular/cdk/drag-drop';
 
 @Component({
@@ -24,6 +25,7 @@ export class AppComponent {
   'Item 1',
   'Item 2',
   'Item 3',
+  'item 8'
   ];
 
   activeItems = [
@@ -37,11 +39,11 @@ export class AppComponent {
   ];
 
   // create list of numbers
-  // constructor() {
-  //   for (let i = 0; i < 10; i++) {
-  //     this.numbers.push(i);
-  //   }
-  // }
+  constructor() {
+    for (let i = 0; i < 10; i++) {
+      this.numbers.push(i);
+    }
+  }
   // custom drop event, using the transferArrayItem and moveItemInArray methods
   // previousContainer = Container from which the item got dragged.
   // transferArrayItem is an imported utility function
@@ -64,7 +66,7 @@ export class AppComponent {
       );
     }
   }
-
+  // function to deal with drag and drop of strings
   dropped(event: CdkDragDrop<string[]>) {
     if (event.item.data === 'Try to move me') {
       console.log('this isn\'t happening today');
@@ -88,22 +90,24 @@ export class AppComponent {
   }
 
   entered(event: CdkDragEnter<string[]>) {
-    console.log('Entered', event.item.data);
+    console.log('Add to New list: ', event.item.data);
   }
 
   exited(event: CdkDragExit<string[]>) {
     console.log('Exited', event.item.data);
   }
 
-  specialUseCase(drag?: CdkDrag, drop?: CdkDrop) {
-    if (drop.data.length <= 2) {
+  // applies some restrictions on what can be moved between columns
+  specialUseCase(dragList?: CdkDrag, dropList?: CdkDropList) {
+    if (dropList.data.length <= 2) {
       console.log('Can\'t drop you because there aren\'t enough items in \'Active\'');
       return false;
     }
 
-    const allowedItems = ['Item 5', 'Item 6', 'Item 7', 'Item 2'];
-    if (allowedItems.indexOf(drag.data) === -1) {
-      console.log('Can\'t drop you because only Item 2, 5, 6 and 7 are allowed here');
+    const allowedItems = ['Item 2', 'Item 5', 'Item 6', 'Item 7', 'item 8'];
+    console.log('The index of the allowed item is: ', allowedItems.indexOf(dragList.data));
+    if (allowedItems.indexOf(dragList.data) === -1) {
+      console.log('Can\'t drop you because only Items 2, 5, 6, 7 & 8 are allowed here');
       return false;
     }
 

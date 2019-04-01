@@ -1,12 +1,19 @@
 .draw-area {
-  height: 100px;
+  height: 40px;
+  width: 50%;
+  display: inline-flex;
+  border: 2px solid black;
+}
+
+.rectangle {
+  min-height: 20vh;
   width: 50%;
   display: inline-flex;
   border: 2px solid black;
 }
   
 .item {
-  height: 50px;
+  height: 30px;
   width: 100%;
   border: 2px solid blue;
   display: inline-flex;
