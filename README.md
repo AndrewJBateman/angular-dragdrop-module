@@ -1,6 +1,6 @@
 # Angular Material Table
 
-This project uses the [@angular/cdk/drag-drop module](https://material.angular.io/cdk/drag-drop/overview)  to drag numbered boxes from a list on the left to a numbered list on the right and vice versa.
+This project uses the [@angular/cdk/drag-drop module](https://material.angular.io/cdk/drag-drop/overview) to drag numbered boxes from a list on the left to a numbered list on the right and vice versa.
 
 *** Note: to open web links in a new window use: _ctrl+click on link_**
 
@@ -27,8 +27,10 @@ Important note: the version of Angular Material is important. Version 7.1.1 is u
 
 ## Technologies
 
-* [Angular CLI v7.0.6](https://github.com/angular/angular-cli)
-* [Angular Material v7.1.1](https://material.angular.io/)
+* [Angular CLI v8.0.1](https://github.com/angular/angular-cli)
+
+* [Angular Material v8.0.0](https://material.angular.io/)
+
 * [Angular Material Drag and Drop Module](https://material.angular.io/cdk/drag-drop/overview)
 
 ## Setup
