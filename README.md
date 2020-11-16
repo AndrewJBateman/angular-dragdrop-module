@@ -1,24 +1,28 @@
 # :zap: Angular Material Table
 
 * This project uses the [@angular/cdk/drag-drop module](https://material.angular.io/cdk/drag-drop/overview) to drag numbered boxes from a list on the left to a numbered list on the right and vice versa.
+* Tutorial code from [Demos With Angular](https://www.youtube.com/channel/UCYFd7Qy93YP7gPERnxP545A) but with updates due to updated Angular/Material versions - see [:clap: Inspiration](#clap-inspiration) below
 
 *** Note: to open web links in a new window use: _ctrl+click on link_**
 
 ## :page_facing_up: Table of contents
 
-* [General info](#general-info)
-* [Screenshots](#screenshots)
-* [Technologies](#technologies)
-* [Setup](#setup)
-* [Features](#features)
-* [Status](#status)
-* [Inspiration](#inspiration)
-* [Contact](#contact)
+* [:zap: Angular Material Table](#zap-angular-material-table)
+  * [:page_facing_up: Table of contents](#page_facing_up-table-of-contents)
+  * [:books: General info](#books-general-info)
+  * [:camera: Screenshots](#camera-screenshots)
+  * [:signal_strength: Technologies](#signal_strength-technologies)
+  * [:floppy_disk: Setup](#floppy_disk-setup)
+  * [:computer: Code Examples](#computer-code-examples)
+  * [:cool: Features](#cool-features)
+  * [:clipboard: Status & To-Do List](#clipboard-status--to-do-list)
+  * [:clap: Inspiration](#clap-inspiration)
+  * [:envelope: Contact](#envelope-contact)
 
 ## :books: General info
 
 * "The [@angular/cdk/drag-drop module](https://material.angular.io/cdk/drag-drop/overview) provides you with a way to easily and declaratively create drag-and-drop interfaces, with support for free dragging, sorting within a list, transferring items between lists, animations, touch devices, custom drag handles, previews, and placeholders, in addition to horizontal lists and locking along an axis."
-* Important note: the version of Angular Material is important. Version 8.0.0 is used here which means cdkDrop**List** elements are used (i.e. 'cdkDrop' elements will not work).
+* Important note: the version of Angular Material is important. Version 11 is used here which means cdkDrop**List** elements are used (i.e. 'cdkDrop' elements will not work).
 
 ## :camera: Screenshots
 
@@ -26,16 +30,15 @@
 
 ## :signal_strength: Technologies
 
-* [Angular CLI v8.0.1](https://github.com/angular/angular-cli)
-* [Angular Material v8.0.0](https://material.angular.io/)
+* [Angular CLI v11](https://github.com/angular/angular-cli)
+* [Angular Material v11](https://material.angular.io/)
 * [Angular Material Drag and Drop Module](https://material.angular.io/cdk/drag-drop/overview)
 
 ## :floppy_disk: Setup
 
 * Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 * Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-* Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-* Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+* Run `ng lint` to check syntax using TSLint. Currently all files passing :-) Note [TSLint will be replaced with ESLint](https://github.com/palantir/tslint/issues/4534)
 
 ## :computer: Code Examples
 
@@ -69,11 +72,12 @@
 * Drag and drop functionality - from one list to the other (with certain restrictions - e.g. you cannot move an active item back to the new items list).
 * Items can be rearranged in their lists.
 * Transitions used between lists
+* Updated to latest Angular 11 and all dependencies up to date with no conflicts
 
 ## :clipboard: Status & To-Do List
 
 * Status: Working app that shows off the [@angular/cdk/drag-drop](https://material.angular.io/cdk/drag-drop/overview) module.
-* To-Do: add functionality.
+* To-Do: nothing.
 
 ## :clap: Inspiration
 

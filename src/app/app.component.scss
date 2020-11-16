@@ -9,9 +9,9 @@
   min-height: 20vh;
   width: 50%;
   display: inline-flex;
-  border: 2px solid black;
+  border: 2px solid rgb(29, 13, 13);
 }
-  
+
 .item {
   height: 30px;
   width: 100%;
@@ -35,14 +35,12 @@ cdk-drop {
   min-height: 100vh;
 }
 
-
 .cdk-drop-dragging .cdk-drag {
   transition: transform 500ms cubic-bezier(0, 0, 0.2, 1);
 }
 
 .cdk-drag-animating {
   transition: transform 550ms cubic-bezier(0, 0, 0.2, 1);
-
 }
 
 .cdk-drag-placeholder {
