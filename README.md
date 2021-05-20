@@ -1,9 +1,13 @@
 # :zap: Angular Material Table
 
-* This project uses the [@angular/cdk/drag-drop module](https://material.angular.io/cdk/drag-drop/overview) to drag numbered boxes from a list on the left to a numbered list on the right and vice versa.
+* Angular project using the [@angular/cdk/drag-drop module](https://material.angular.io/cdk/drag-drop/overview) to drag numbered boxes from a list on the left to a numbered list on the right and vice versa.
 * Tutorial code from [Demos With Angular](https://www.youtube.com/channel/UCYFd7Qy93YP7gPERnxP545A) but with updates due to updated Angular/Material versions - see [:clap: Inspiration](#clap-inspiration) below
+* **Note:** to open web links in a new window use: _ctrl+click on link_
 
-*** Note: to open web links in a new window use: _ctrl+click on link_**
+![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/angular-dragdrop-module?style=plastic)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/AndrewJBateman/angular-dragdrop-module?style=plastic)
+![GitHub Repo stars](https://img.shields.io/github/stars/AndrewJBateman/angular-dragdrop-module?style=plastic)
+![GitHub last commit](https://img.shields.io/github/last-commit/AndrewJBateman/angular-dragdrop-module?style=plastic)
 
 ## :page_facing_up: Table of contents
 
@@ -22,7 +26,7 @@
 ## :books: General info
 
 * "The [@angular/cdk/drag-drop module](https://material.angular.io/cdk/drag-drop/overview) provides you with a way to easily and declaratively create drag-and-drop interfaces, with support for free dragging, sorting within a list, transferring items between lists, animations, touch devices, custom drag handles, previews, and placeholders, in addition to horizontal lists and locking along an axis."
-* Important note: the version of Angular Material is important. Version 11 is used here which means cdkDrop**List** elements are used (i.e. 'cdkDrop' elements will not work).
+* Important note: the version of Angular Material is important. Version 12 is used here which means cdkDrop**List** elements are used (i.e. 'cdkDrop' elements will not work).
 
 ## :camera: Screenshots
 
@@ -30,8 +34,8 @@
 
 ## :signal_strength: Technologies
 
-* [Angular CLI v11](https://github.com/angular/angular-cli)
-* [Angular Material v11](https://material.angular.io/)
+* [Angular v12](https://angular.io/)
+* [Angular Material v12](https://material.angular.io/)
 * [Angular Material Drag and Drop Module](https://material.angular.io/cdk/drag-drop/overview)
 
 ## :floppy_disk: Setup
@@ -72,11 +76,10 @@
 * Drag and drop functionality - from one list to the other (with certain restrictions - e.g. you cannot move an active item back to the new items list).
 * Items can be rearranged in their lists.
 * Transitions used between lists
-* Updated to latest Angular 11 and all dependencies up to date with no conflicts
 
 ## :clipboard: Status & To-Do List
 
-* Status: Working app that shows off the [@angular/cdk/drag-drop](https://material.angular.io/cdk/drag-drop/overview) module.
+* Status: Working. Updated may 2021
 * To-Do: nothing.
 
 ## :clap: Inspiration
@@ -86,6 +89,10 @@
 * [Nwose Lotann´s Building Interactive Lists with the new Angular 7 Drag and Drop tool](https://blog.angularindepth.com/building-interactive-lists-with-the-new-angular-7-drag-and-drop-tool-5f2402f8cb27).
 * [Sumit Vekariya's An Intro to Drag & Drop in Angular Using the CDK](https://alligator.io/angular/drag-drop/).
 
+## :file_folder: License
+
+* This project is licensed under the terms of the MIT license.
+
 ## :envelope: Contact
 
-* Repo created by [ABateman](https://www.andrewbateman.org) - you are welcome to [send me a message](https://andrewbateman.org/contact)
+* Repo created by [ABateman](https://github.com/AndrewJBateman), email: gomezbateman@yahoo.com
