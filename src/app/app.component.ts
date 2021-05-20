@@ -20,9 +20,7 @@ export class AppComponent {
   otherNumbers: number[] = [];
 
   newItems = ["Item 0", "Item 1", "Item 2", "Item 3", "item 8"];
-
   activeItems = ["Item 4"];
-
   doneItems = ["Item 5", "Item 6", "Item 7"];
 
   // create list of numbers
