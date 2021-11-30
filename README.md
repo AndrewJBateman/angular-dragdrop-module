@@ -35,7 +35,7 @@
 ## :signal_strength: Technologies
 
 * [Angular v13](https://angular.io/)
-* [Angular Material v12](https://material.angular.io/)
+* [Angular Material v13](https://material.angular.io/)
 * [Angular Material Drag and Drop Module](https://material.angular.io/cdk/drag-drop/overview)
 
 ## :floppy_disk: Setup
@@ -85,8 +85,6 @@
 
 * [Youtube tutorial: Drag and Drop with the Angular CDK - What's New in v7](https://www.youtube.com/watch?v=t1CrWLGxQPk).
 * [Tim Deschryver's Exploring Drag and Drop with the new Angular Material CDK](https://blog.angularindepth.com/exploring-drag-and-drop-with-the-angular-material-cdk-2e0237857290)
-* [Nwose Lotann´s Building Interactive Lists with the new Angular 7 Drag and Drop tool](https://blog.angularindepth.com/building-interactive-lists-with-the-new-angular-7-drag-and-drop-tool-5f2402f8cb27).
-* [Sumit Vekariya's An Intro to Drag & Drop in Angular Using the CDK](https://alligator.io/angular/drag-drop/).
 
 ## :file_folder: License
 
