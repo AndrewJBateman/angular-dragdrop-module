@@ -1,4 +1,4 @@
-# :zap: Angular Material Table
+# :zap: Angular Dragdrop Module
 
 * Angular project using the [@angular/cdk/drag-drop module](https://material.angular.io/cdk/drag-drop/overview) to drag numbered boxes from a list on the left to a numbered list on the right and vice versa.
 * Tutorial code from [Demos With Angular](https://www.youtube.com/channel/UCYFd7Qy93YP7gPERnxP545A) but with updates due to updated Angular/Material versions - see [:clap: Inspiration](#clap-inspiration) below
@@ -11,7 +11,7 @@
 
 ## :page_facing_up: Table of contents
 
-* [:zap: Angular Material Table](#zap-angular-material-table)
+* [:zap: Angular Dragdrop Module](#zap-angular-dragdrop-module)
   * [:page_facing_up: Table of contents](#page_facing_up-table-of-contents)
   * [:books: General info](#books-general-info)
   * [:camera: Screenshots](#camera-screenshots)
@@ -26,7 +26,7 @@
 ## :books: General info
 
 * "The [@angular/cdk/drag-drop module](https://material.angular.io/cdk/drag-drop/overview) provides you with a way to easily and declaratively create drag-and-drop interfaces, with support for free dragging, sorting within a list, transferring items between lists, animations, touch devices, custom drag handles, previews, and placeholders, in addition to horizontal lists and locking along an axis."
-* Important note: the version of Angular Material is important. Version 12 is used here which means cdkDrop**List** elements are used (i.e. 'cdkDrop' elements will not work).
+* Important note: the version of Angular Material is important. Version 13 is used here which means cdkDrop**List** elements are used (i.e. 'cdkDrop' elements will not work).
 
 ## :camera: Screenshots
 
@@ -34,7 +34,7 @@
 
 ## :signal_strength: Technologies
 
-* [Angular v12](https://angular.io/)
+* [Angular v13](https://angular.io/)
 * [Angular Material v12](https://material.angular.io/)
 * [Angular Material Drag and Drop Module](https://material.angular.io/cdk/drag-drop/overview)
 
@@ -42,7 +42,6 @@
 
 * Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 * Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-* Run `ng lint` to check syntax using TSLint. Currently all files passing :-) Note [TSLint will be replaced with ESLint](https://github.com/palantir/tslint/issues/4534)
 
 ## :computer: Code Examples
 
@@ -79,8 +78,8 @@
 
 ## :clipboard: Status & To-Do List
 
-* Status: Working. Updated may 2021
-* To-Do: nothing.
+* Status: Working
+* To-Do: nothing
 
 ## :clap: Inspiration
 
