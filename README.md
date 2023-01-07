@@ -27,7 +27,6 @@
 ## :books: General info
 
 * "The [@angular/cdk/drag-drop module](https://material.angular.io/cdk/drag-drop/overview) provides you with a way to easily and declaratively create drag-and-drop interfaces, with support for free dragging, sorting within a list, transferring items between lists, animations, touch devices, custom drag handles, previews, and placeholders, in addition to horizontal lists and locking along an axis."
-* Important note: the version of Angular Material is important. Version 13 is used here which means cdkDrop**List** elements are used (i.e. 'cdkDrop' elements will not work).
 
 ## :camera: Screenshots
 
@@ -35,8 +34,8 @@
 
 ## :signal_strength: Technologies
 
-* [Angular v14](https://angular.io/)
-* [Angular Material v14](https://material.angular.io/)
+* [Angular v15](https://angular.io/)
+* [Angular Material v15](https://material.angular.io/)
 * [Angular Material Drag and Drop Module](https://material.angular.io/cdk/drag-drop/overview)
 
 ## :floppy_disk: Setup
@@ -92,4 +91,4 @@
 
 ## :envelope: Contact
 
-* Repo created by [ABateman](https://github.com/AndrewJBateman), email: gomezbateman@yahoo.com
+* Repo created by [ABateman](https://github.com/AndrewJBateman), email: gomezbateman@gmail.com
